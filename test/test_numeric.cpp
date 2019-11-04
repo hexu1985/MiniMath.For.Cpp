@@ -13,5 +13,18 @@ TEST(Numeric, modexp)
 
 TEST(Numeric, gcd)
 {
+    EXPECT_EQ(6, gcd(72, 30));
     EXPECT_EQ(18, gcd(252, 198));
+    EXPECT_EQ(1, gcd(34, 55));
+
+    int a, b, x, y, d;
+    a = 252; b = 198;
+    d = gcd(a, b, x, y);
+    EXPECT_EQ(18, d);
+    EXPECT_EQ(d, a*x+b*y);
+
+    a = 25; b = 11;
+    d = gcd(a, b, x, y);
+    EXPECT_EQ(1, d);
+    EXPECT_EQ(d, a*x+b*y);
 }

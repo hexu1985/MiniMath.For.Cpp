@@ -1,6 +1,8 @@
 #ifndef MINI_MATH_NUMERIC_INC
 #define MINI_MATH_NUMERIC_INC
 
+#include <tuple>
+
 namespace mini_math {
 
 /**
@@ -65,6 +67,26 @@ Integer gcd(Integer a, Integer b)
         return gcd_euclid(b, a);
     else
         return gcd_euclid(a, b);
+}
+
+template <typename Integer>
+std::tuple<Integer, Integer, Integer> gcd_euclid_ext(Integer a, Integer b)
+{
+    if (b == 0) return std::make_tuple(Integer(1), Integer(0), a);
+    Integer x, y, d;
+    std::tie(x, y, d) = gcd_euclid_ext(b, a%b);
+    return std::make_tuple(y, x - (a/b)*y, d);
+}
+
+template <typename Integer>
+Integer gcd(Integer a, Integer b, Integer &x, Integer &y)
+{
+    Integer d;
+    if (a < b)
+        std::tie(x, y, d) = gcd_euclid_ext(b, a);
+    else
+        std::tie(x, y, d) = gcd_euclid_ext(a, b);
+    return d;
 }
 
 }   // namespace mini_math
