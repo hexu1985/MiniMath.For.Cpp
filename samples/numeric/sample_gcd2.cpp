@@ -21,7 +21,10 @@ int main(int argc, char *argv[])
     int x, y, d;
     d = gcd(a, b, x, y);
 
-    std::cout << d << " = gcd(" << a << ", " << b << ")" << ", " << d << " = (" << a << ")*(" << x << ") + (" << b << ")*(" << y << ")" << std::endl;
+    std::cout << "gcd(" << a << ", " << b << ") = " << d << std::endl;
+    std::cout << a << "*(" << x << ") + " << b << "*(" << y << ") = " << d << std::endl;
+
+    std::cout << a << "*(" << x << "+" << (b/d) << "*k)+" << b << "*(" << y << "-" << (a/d) << "*k)=" << d << std::endl;
 
     return 0;
 }

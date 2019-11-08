@@ -17,14 +17,20 @@ TEST(Numeric, gcd)
     EXPECT_EQ(18, gcd(252, 198));
     EXPECT_EQ(1, gcd(34, 55));
 
-    int a, b, x, y, d;
+    int a, b, x, y, d, k;
     a = 252; b = 198;
     d = gcd(a, b, x, y);
     EXPECT_EQ(18, d);
     EXPECT_EQ(d, a*x+b*y);
+    for (k = 1; k < 10; k++) {
+        EXPECT_EQ(d, a*(x+k*(b/d))+b*(y-k*(a/d)));
+    }
 
     a = 25; b = 11;
     d = gcd(a, b, x, y);
     EXPECT_EQ(1, d);
     EXPECT_EQ(d, a*x+b*y);
+    for (k = 1; k < 10; k++) {
+        EXPECT_EQ(d, a*(x+k*(b/d))+b*(y-k*(a/d)));
+    }
 }
