@@ -20,7 +20,7 @@ namespace mini_math {
  * @param y 指数
  * @param N 模数
  *
- * @warning: x, y, N必须是正整数
+ * @warning x, y, N必须是正整数
  *
  * @see 算法概论中文版: 章节1.2.2
  */
@@ -45,7 +45,7 @@ Integer modexp(Integer x, Integer y, Integer N)
  *
  * @return (a, b): a和b的最大公因数
  *
- * @warning: a, b必须是正整数, 且a>b
+ * @warning a, b必须是正整数, 且a>b
  *
  * @see 算法概论中文版: 章节1.2.3
  */
@@ -65,7 +65,7 @@ Integer gcd_euclid(Integer a, Integer b)
  *
  * @return (a, b): a和b的最大公因数
  *
- * @warning: a, b必须是正整数
+ * @warning a, b必须是正整数
  */
 template <typename Integer>
 Integer gcd(Integer a, Integer b)
@@ -87,7 +87,7 @@ Integer gcd(Integer a, Integer b)
  *
  * @return x, y, d, 其中d=(a, b), 并且\f$d = a \times x+b \times y\f$
  *
- * @warning: a, b必须是正整数, 且a>b
+ * @warning a, b必须是正整数, 且a>b
  *
  * @see 算法概论中文版: 章节1.2.4
  */
@@ -113,7 +113,7 @@ std::tuple<Integer, Integer, Integer> gcd_euclid_ext(Integer a, Integer b)
  *
  * @return (a, b): a和b的最大公因数, 并且\f$d = a \times x+b \times y\f$
  *
- * @warning: a, b必须是正整数
+ * @warning a, b必须是正整数
  */
 template <typename Integer>
 Integer gcd(Integer a, Integer b, Integer &x, Integer &y)

@@ -1,3 +1,6 @@
+/** \example numeric/sample_modexp1.cpp
+ * This is an example of how to use the modexp function.
+ */
 #include "numeric.hpp"
 #include <iostream>
 #include <string>

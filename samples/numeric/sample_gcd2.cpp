@@ -1,3 +1,6 @@
+/** \example numeric/sample_gcd2.cpp
+ * This is an example of how to use the gcd function.
+ */
 #include "numeric.hpp"
 #include <iostream>
 #include <string>
